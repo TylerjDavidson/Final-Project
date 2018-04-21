@@ -1,6 +1,28 @@
 {% extends "layout.html" %}
 {% block body %}
 
+<style>
+.box {
+  float:left;
+  width: 505px;
+  height: 450px;
+  border: 2px solid black;
+  padding: 25px;
+  margin: 25px;
+  font-size: 100px;
+  text-align:center;
+}
+
+.red {
+  background-color:red;
+}
+
+.blue{
+  background:blue;
+}
+
+
+</style>
 <!-- TODO: style with boostrap -->
 <h2>The current conditions: </h2>
 
@@ -16,16 +38,165 @@
 </ul>
 
 <!-- see https://canvas-gauges.com/documentation/examples/ -->
-<canvas
-  id="temp_gauge"
-  data-type="linear-gauge"
-  data-min-value="0"
-  data-max-value="100"
-  data-width="100"
-  data-animation-rule="elastic"
-  data-animation-duration="500"
-  ></canvas>
 
+<div class = "box red" >
+  <h1 style="font-size:40%; font-family:garamond;"> <b> Indoor Temperature</b></h1>
+<canvas
+    id="indoor_temp"
+    data-type="linear-gauge"
+    data-width="80"
+    data-height="300"
+    data-units="°F"
+    data-min-value="0"
+    data-start-angle="90"
+    data-ticks-angle="180"
+    data-value-box="false"
+    data-max-value="120"
+    data-major-ticks="0,10,20,30,40,50,60,70,80,90,100,110,120"
+    data-minor-ticks="2"
+    data-stroke-ticks="true"
+    data-highlights='[ {"from": 100, "to": 220, "color": "rgba(200, 50, 50, .75)"} ]'
+    data-color-plate="#fff"
+    data-border-shadow-width="0"
+    data-borders="false"
+    data-needle-type="arrow"
+    data-needle-width="2"
+    data-needle-circle-size="7"
+    data-needle-circle-outer="true"
+    data-needle-circle-inner="false"
+    data-animation-duration="1500"
+    data-animation-rule="linear"
+    data-bar-width="10"
+    data-value="35"
+></canvas>
+<li style="font-size:10%; font-family:garamond; position:relative; left:140px; bottom:270px"> The indoor temperature is <b id="indoor_temp">??</b> </li>
+<li style="font-size:10%; font-family:garamond; position:relative; left:132px; bottom:265px"> The indoor humidity is <b id="indoor_humidity">??</b> </li>
+
+<canvas
+  id="outdoor_humidity_gauge"
+      data-type="radial-gauge"
+      data-width="200"
+      data-height="200"
+      data-units="%"
+      data-title="Indoor Humidity"
+      data-min-value="0"
+      data-max-value="100"
+      data-major-ticks="[0,10,20,30,40,50,60,70,80,90,100]"
+      data-minor-ticks="2"
+      data-stroke-ticks="true"
+      data-highlights='[ {"from": 0, "to": 80, "color": "rgba(0,0, 255, .3)"},
+          {"from": 80, "to": 100, "color": "rgba(255, 0, 0, .3)"} ]'
+      data-ticks-angle="225"
+      data-start-angle="67.5"
+      data-color-major-ticks="#ddd"
+      data-color-minor-ticks="#ddd"
+      data-color-title="#eee"
+      data-color-units="#ccc"
+      data-color-numbers="#eee"
+      data-color-plate="#222"
+      data-border-shadow-width="0"
+      data-borders="true"
+      data-needle-type="arrow"
+      data-needle-width="2"
+      data-needle-circle-size="7"
+      data-needle-circle-outer="true"
+      data-needle-circle-inner="false"
+      data-animation-duration="1500"
+      data-animation-rule="linear"
+      data-color-border-outer="#333"
+      data-color-border-outer-end="#111"
+      data-color-border-middle="#222"
+      data-color-border-middle-end="#111"
+      data-color-border-inner="#111"
+      data-color-border-inner-end="#333"
+      data-color-needle-shadow-down="#333"
+      data-color-needle-circle-outer="#333"
+      data-color-needle-circle-outer-end="#111"
+      data-color-needle-circle-inner="#111"
+      data-color-needle-circle-inner-end="#222"
+      data-value-box-border-radius="0"
+      data-color-value-box-rect="#222"
+      data-color-value-box-rect-end="#333"
+></canvas>
+</div>
+
+<div class = "box blue" >
+<canvas
+    id="indoor_temp"
+    data-type="linear-gauge"
+    data-width="120"
+    data-height="400"
+    data-units="°F"
+    data-min-value="0"
+    data-start-angle="90"
+    data-ticks-angle="180"
+    data-value-box="false"
+    data-max-value="120"
+    data-major-ticks="0,10,20,30,40,50,60,70,80,90,100,110,120"
+    data-minor-ticks="2"
+    data-stroke-ticks="true"
+    data-highlights='[ {"from": 100, "to": 220, "color": "rgba(200, 50, 50, .75)"} ]'
+    data-color-plate="#fff"
+    data-border-shadow-width="0"
+    data-borders="false"
+    data-needle-type="arrow"
+    data-needle-width="2"
+    data-needle-circle-size="7"
+    data-needle-circle-outer="true"
+    data-needle-circle-inner="false"
+    data-animation-duration="1500"
+    data-animation-rule="linear"
+    data-bar-width="10"
+    data-value="35"
+></canvas>
+
+<canvas
+    id="outdoor_humidity_gauge"
+        data-type="radial-gauge"
+        data-width="300"
+        data-height="300"
+        data-units="%"
+        data-title="Outdoor Humidity"
+        data-min-value="0"
+        data-max-value="100"
+        data-major-ticks="[0,10,20,30,40,50,60,70,80,90,100]"
+        data-minor-ticks="2"
+        data-stroke-ticks="true"
+        data-highlights='[ {"from": 0, "to": 80, "color": "rgba(0,0, 255, .3)"},
+            {"from": 80, "to": 100, "color": "rgba(255, 0, 0, .3)"} ]'
+        data-ticks-angle="225"
+        data-start-angle="67.5"
+        data-color-major-ticks="#ddd"
+        data-color-minor-ticks="#ddd"
+        data-color-title="#eee"
+        data-color-units="#ccc"
+        data-color-numbers="#eee"
+        data-color-plate="#222"
+        data-border-shadow-width="0"
+        data-borders="true"
+        data-needle-type="arrow"
+        data-needle-width="2"
+        data-needle-circle-size="7"
+        data-needle-circle-outer="true"
+        data-needle-circle-inner="false"
+        data-animation-duration="1500"
+        data-animation-rule="linear"
+        data-color-border-outer="#333"
+        data-color-border-outer-end="#111"
+        data-color-border-middle="#222"
+        data-color-border-middle-end="#111"
+        data-color-border-inner="#111"
+        data-color-border-inner-end="#333"
+        data-color-needle-shadow-down="#333"
+        data-color-needle-circle-outer="#333"
+        data-color-needle-circle-outer-end="#111"
+        data-color-needle-circle-inner="#111"
+        data-color-needle-circle-inner-end="#222"
+        data-value-box-border-radius="0"
+        data-color-value-box-rect="#222"
+        data-color-value-box-rect-end="#333"
+></canvas>
+</div>
 
 <h2>Send a cheep</h2>
 <!-- TODO: add form with a name and message field:
