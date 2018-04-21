@@ -4,11 +4,11 @@
 <style>
 .box {
   float:left;
-  width: 505px;
-  height: 450px;
+  width: 400px;
+  height: 400px;
   border: 2px solid black;
   padding: 25px;
-  margin: 25px;
+  margin: 50px;
   font-size: 100px;
   text-align:center;
 }
@@ -26,23 +26,23 @@
 <!-- TODO: style with boostrap -->
 <h2>The current conditions: </h2>
 
-<!-- example of FontAwesome icon -->
+<!-- Original example code
 <i class="far fa-sun fa-5x" style="color: orange"></i>
 <i class="fas fa-cloud fa-5x" style="color: gray"></i>
-
 <ul>
   <li> The indoor temperature is <b id="indoor_temp">??</b> </li>
   <li> The indoor humidity is <b id="indoor_humidity">??</b> </li>
   <li> The outdoor temperature is <b id="outdoor_temp">??</b> </li>
   <li> The outdoor humidity is <b id="outdoor_humidity">??</b> </li>
-</ul>
+</ul> -->
+
 
 <!-- see https://canvas-gauges.com/documentation/examples/ -->
 
 <div class = "box red" >
-  <h1 style="font-size:40%; font-family:garamond;"> <b> Indoor Temperature</b></h1>
-<canvas
-    id="indoor_temp"
+  <h1 style="font-size:30%; font-family:garamond;"> <b> Indoor Temperature</b></h1>
+<canvas style = "position:relative; right:110px;"
+    id="indoor_temp_gauge"
     data-type="linear-gauge"
     data-width="80"
     data-height="300"
@@ -69,11 +69,12 @@
     data-bar-width="10"
     data-value="35"
 ></canvas>
-<li style="font-size:10%; font-family:garamond; position:relative; left:140px; bottom:270px"> The indoor temperature is <b id="indoor_temp">??</b> </li>
-<li style="font-size:10%; font-family:garamond; position:relative; left:132px; bottom:265px"> The indoor humidity is <b id="indoor_humidity">??</b> </li>
 
-<canvas
-  id="outdoor_humidity_gauge"
+<p style="font-size:15%; font-family:garamond; position:relative; left:70px; bottom:300px"> Temperature: <b id="indoor_temp">??</b> </p>
+<p style="font-size:15%; font-family:garamond; position:relative; left:70px; bottom:310px"> Humidity: <b id="indoor_humidity">??</b> </p>
+
+<canvas style = "position:relative; left:70px; bottom:300px;"
+  id="indoor_humidity_gauge"
       data-type="radial-gauge"
       data-width="200"
       data-height="200"
@@ -121,11 +122,13 @@
 </div>
 
 <div class = "box blue" >
-<canvas
-    id="indoor_temp"
+  <h1 style="font-size:30%; font-family:garamond;"> <b> Indoor Temperature</b></h1>
+
+<canvas style = "position:relative; right:110px;"
+    id="outdoor_temp_gauge"
     data-type="linear-gauge"
-    data-width="120"
-    data-height="400"
+    data-width="80"
+    data-height="300"
     data-units="°F"
     data-min-value="0"
     data-start-angle="90"
@@ -150,11 +153,14 @@
     data-value="35"
 ></canvas>
 
-<canvas
+<p style="font-size:15%; font-family:garamond; position:relative; left:70px; bottom:300px"> Temperature: <b id="outdoor_temp">??</b> </p>
+<p style="font-size:15%; font-family:garamond; position:relative; left:70px; bottom:310px"> Humidity: <b id="outdoor_humidity">??</b> </p>
+
+<canvas style = "position:relative; left:70px; bottom:300px;"
     id="outdoor_humidity_gauge"
         data-type="radial-gauge"
-        data-width="300"
-        data-height="300"
+        data-width="200"
+        data-height="200"
         data-units="%"
         data-title="Outdoor Humidity"
         data-min-value="0"
@@ -198,7 +204,7 @@
 ></canvas>
 </div>
 
-<h2>Send a cheep</h2>
+<h2 style = "position:relative; float:bottom;">Send a cheep</h2>
 <!-- TODO: add form with a name and message field:
      on submit POST the data to /cheep -->
 
