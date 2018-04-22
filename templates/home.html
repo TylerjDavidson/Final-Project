@@ -2,7 +2,7 @@
 {% block body %}
 
 <style>
-.box {
+.weatherbox {
   float:left;
   width: 400px;
   height: 400px;
@@ -13,33 +13,45 @@
   text-align:center;
 }
 
-.red {
+.cheepbox{
+  float:left;
+  position:relative;
+  left:350px;
+  bottom:50px;
+  width: 250px;
+  height: 50px;
+  border: 2px solid #0066FF;
+  border-radius: 25px;
+  padding: 0px;
+  margin: 10px;
+
+}
+
+.indoor {
   background-color:red;
 }
 
-.blue{
+.outdoor{
   background:blue;
 }
 
+.cheepdetails{
+  background:#0066FF;
+  font-size: 30px;
+  color:black;
+  text-align:center;
+  font-weight:bold;
+  cursor:pointer;
+}
 
 </style>
+
 <!-- TODO: style with boostrap -->
 <h2>The current conditions: </h2>
 
-<!-- Original example code
-<i class="far fa-sun fa-5x" style="color: orange"></i>
-<i class="fas fa-cloud fa-5x" style="color: gray"></i>
-<ul>
-  <li> The indoor temperature is <b id="indoor_temp">??</b> </li>
-  <li> The indoor humidity is <b id="indoor_humidity">??</b> </li>
-  <li> The outdoor temperature is <b id="outdoor_temp">??</b> </li>
-  <li> The outdoor humidity is <b id="outdoor_humidity">??</b> </li>
-</ul> -->
-
-
 <!-- see https://canvas-gauges.com/documentation/examples/ -->
 
-<div class = "box red" >
+<div class = "weatherbox indoor" >
   <h1 style="font-size:30%; font-family:garamond;"> <b> Indoor Conditions</b></h1>
 <canvas style = "position:relative; right:110px;"
     id="indoor_temp_gauge"
@@ -121,7 +133,7 @@
 ></canvas>
 </div>
 
-<div class = "box blue" >
+<div class = "weatherbox outdoor" >
   <h1 style="font-size:30%; font-family:garamond;"> <b> Outdoor Conditions</b></h1>
 
 <canvas style = "position:relative; right:110px;"
@@ -204,7 +216,10 @@
 ></canvas>
 </div>
 
-<h2 style = "position:relative; float:bottom;">Send a cheep</h2>
+
+<form>
+<input class="cheepbox cheepdetails" type="button" value= "Send a Cheep!" onclick="window.location.href='localhost:5000/cheep'" />
+</form>
 <!-- TODO: add form with a name and message field:
      on submit POST the data to /cheep -->
 
