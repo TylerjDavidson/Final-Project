@@ -1,12 +1,14 @@
 import random
 import json
 import requests
+import serial
 from flask import (Flask,
                    request,
                    url_for,
                    render_template)
 
 app = Flask(__name__)
+s = serial.Serial("/dev/ttyACM0") #serial connection
 
 @app.route("/")
 def home():
@@ -14,9 +16,12 @@ def home():
 
 @app.route("/data.json")
 def data():
+    s.write("p") #send cmd to send serial data from Arduino
+    str_data = s.readline() #read data
+    data = [int(x) for x in str_data.split(',')] #split data into two variables
     # TODO read temperature and humidity from Arduino
-    indoor_temp = random.randint(60,80)
-    indoor_humidity = random.random()
+    indoor_temp = data[0]
+    indoor_humidity = data[1]
     # TODO read temperature and humidity from openweathermap.org
     payload = {'q': 'Annapolis','units':'imperial','APPID':'631ff851f1ece3754797d45cd9573bb0'}
     r = requests.get('http://api.openweathermap.org/data/2.5/weather', params=payload)
