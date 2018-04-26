@@ -48,7 +48,9 @@ def cheep():
     with open("cheeps.log",'a') as f:
         f.write("%s: %s" % (name,message))
     # TODO: display the cheep on the kit LCD
+
     s.write("l")
     msg = "%s: %s" % (name,message)
+
     s.write(msg.encode('utf-8'))
     return render_template('thankyou.html')
