@@ -20,7 +20,8 @@ def data():
     str_data = s.readline() #read data
     data = [int(x) for x in str_data.split(',')] #split data into two variables
     # TODO read temperature and humidity from Arduino
-    indoor_temp = data[0]
+    #convert to Fahrenheit
+    indoor_temp = round(data[0]*1.8+32)
     indoor_humidity = data[1]
     # TODO read temperature and humidity from openweathermap.org
     payload = {'q': 'Annapolis','units':'imperial','APPID':'631ff851f1ece3754797d45cd9573bb0'}
