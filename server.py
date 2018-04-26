@@ -46,4 +46,6 @@ def cheep():
         f.write("%s: %s" %(name,message))
     # TODO: append [name: message] to a file of cheeps
     # TODO: display the cheep on the kit LCD
+    s.write('l')
+    msg = "%s: %s" (name,message)
     return render_template('thankyou.html')
