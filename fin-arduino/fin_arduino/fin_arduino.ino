@@ -17,6 +17,7 @@ void setup() {
 }
 
 void loop() {
+  String msg;
   byte temperature = 0;
   byte humidity = 0;
   if(Serial.available()>0){
@@ -30,10 +31,10 @@ void loop() {
       Serial.print(humidity); Serial.println("");
       break;
       case 'l':
-      //msg = serial.readString(); //read in cheep
+      msg = Serial.readString(); //read in cheep
       lcd.clear();//clear screen
       lcd.setCursor(0,0);//top left
-      lcd.print("user1: hey");
+      lcd.print(msg);
       break;
     }
   }

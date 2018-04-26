@@ -43,5 +43,10 @@ def cheep():
     message = request.form['message']
     print("got a cheep from [%s]: %s" % (name,message))
     # TODO: append [name: message] to a file of cheeps
+    with open("cheeps.log",'a') as f:
+        f.write("%s: %s" % (name,message))
     # TODO: display the cheep on the kit LCD
+    s.write("l")
+    msg = "%s: %s" % (name,message)
+    s.write(msg.encode('utf-8'))
     return render_template('thankyou.html')
