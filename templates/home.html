@@ -32,10 +32,8 @@
 }
 </style>
 
-<!-- TODO: style with boostrap -->
-<h2>The current conditions: </h2>
 
-<!-- see https://canvas-gauges.com/documentation/examples/ -->
+<h2>The current conditions: </h2>
 
 <div class = "weatherbox indoor" >
   <h1 style="font-size:30%; font-family:garamond;"> <b> Indoor Conditions</b></h1>
@@ -122,7 +120,7 @@
 <div class = "weatherbox outdoor" >
   <h1 style="font-size:30%; font-family:garamond;"> <b> Outdoor Conditions</b></h1>
 
-<canvas style = "position:relative; right:110px;"
+  <canvas style = "position:relative; right:110px;"
     id="outdoor_temp_gauge"
     data-type="linear-gauge"
     data-width="80"
@@ -149,66 +147,65 @@
     data-animation-rule="linear"
     data-bar-width="10"
     data-value="35"
-></canvas>
+  ></canvas>
 
-<p style="font-size:15%; font-family:garamond; position:relative; left:70px; bottom:300px"> Temperature: <b id="outdoor_temp">??</b> </p>
-<p style="font-size:15%; font-family:garamond; position:relative; left:70px; bottom:310px"> Humidity: <b id="outdoor_humidity">??</b> </p>
+  <p style="font-size:15%; font-family:garamond; position:relative; left:70px; bottom:300px"> Temperature: <b id="outdoor_temp">??</b> </p>
+  <p style="font-size:15%; font-family:garamond; position:relative; left:70px; bottom:310px"> Humidity: <b id="outdoor_humidity">??</b> </p>
 
-<canvas style = "position:relative; left:70px; bottom:300px;"
+  <canvas style = "position:relative; left:70px; bottom:300px;"
     id="outdoor_humidity_gauge"
-        data-type="radial-gauge"
-        data-width="200"
-        data-height="200"
-        data-units="%"
-        data-title="Outdoor Humidity"
-        data-min-value="0"
-        data-max-value="100"
-        data-major-ticks="[0,10,20,30,40,50,60,70,80,90,100]"
-        data-minor-ticks="2"
-        data-stroke-ticks="true"
-        data-highlights='[ {"from": 0, "to": 80, "color": "rgba(0,0, 255, .3)"},
-            {"from": 80, "to": 100, "color": "rgba(255, 0, 0, .3)"} ]'
-        data-ticks-angle="225"
-        data-start-angle="67.5"
-        data-color-major-ticks="#ddd"
-        data-color-minor-ticks="#ddd"
-        data-color-title="#eee"
-        data-color-units="#ccc"
-        data-color-numbers="#eee"
-        data-color-plate="#222"
-        data-border-shadow-width="0"
-        data-borders="true"
-        data-needle-type="arrow"
-        data-needle-width="2"
-        data-needle-circle-size="7"
-        data-needle-circle-outer="true"
-        data-needle-circle-inner="false"
-        data-animation-duration="1500"
-        data-animation-rule="linear"
-        data-color-border-outer="#333"
-        data-color-border-outer-end="#111"
-        data-color-border-middle="#222"
-        data-color-border-middle-end="#111"
-        data-color-border-inner="#111"
-        data-color-border-inner-end="#333"
-        data-color-needle-shadow-down="#333"
-        data-color-needle-circle-outer="#333"
-        data-color-needle-circle-outer-end="#111"
-        data-color-needle-circle-inner="#111"
-        data-color-needle-circle-inner-end="#222"
-        data-value-box-border-radius="0"
-        data-color-value-box-rect="#222"
-        data-color-value-box-rect-end="#333"
-></canvas>
+    data-type="radial-gauge"
+    data-width="200"
+    data-height="200"
+    data-units="%"
+    data-title="Outdoor Humidity"
+    data-min-value="0"
+    data-max-value="100"
+    data-major-ticks="[0,10,20,30,40,50,60,70,80,90,100]"
+    data-minor-ticks="2"
+    data-stroke-ticks="true"
+    data-highlights='[ {"from": 0, "to": 80, "color": "rgba(0,0, 255, .3)"},
+        {"from": 80, "to": 100, "color": "rgba(255, 0, 0, .3)"} ]'
+    data-ticks-angle="225"
+    data-start-angle="67.5"
+    data-color-major-ticks="#ddd"
+    data-color-minor-ticks="#ddd"
+    data-color-title="#eee"
+    data-color-units="#ccc"
+    data-color-numbers="#eee"
+    data-color-plate="#222"
+    data-border-shadow-width="0"
+    data-borders="true"
+    data-needle-type="arrow"
+    data-needle-width="2"
+    data-needle-circle-size="7"
+    data-needle-circle-outer="true"
+    data-needle-circle-inner="false"
+    data-animation-duration="1500"
+    data-animation-rule="linear"
+    data-color-border-outer="#333"
+    data-color-border-outer-end="#111"
+    data-color-border-middle="#222"
+    data-color-border-middle-end="#111"
+    data-color-border-inner="#111"
+    data-color-border-inner-end="#333"
+    data-color-needle-shadow-down="#333"
+    data-color-needle-circle-outer="#333"
+    data-color-needle-circle-outer-end="#111"
+    data-color-needle-circle-inner="#111"
+    data-color-needle-circle-inner-end="#222"
+    data-value-box-border-radius="0"
+    data-color-value-box-rect="#222"
+    data-color-value-box-rect-end="#333"
+  ></canvas>
 </div>
 
 
 
 <form action = "/cheep" method = "post" class ="cheepbox">
-<input type ="text" name = "name" placeholder= "Name Here"></input>
-<input type ="text" name = "message" placeholder= "Message Here"></input>
-<button type = "submit" class="btn btn-primary"> Cheep! </button>
-
+  <input type ="text" name = "name" placeholder= "Name Here"></input>
+  <input type ="text" name = "message" placeholder= "Message Here"></input>
+  <button type = "submit" class="btn btn-primary"> Cheep! </button>
 </form>
 
 
