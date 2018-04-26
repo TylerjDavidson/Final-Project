@@ -48,4 +48,5 @@ def cheep():
     # TODO: display the cheep on the kit LCD
     s.write('l')
     msg = "%s: %s" (name,message)
+    s.write(msg.encode('utf-8'))
     return render_template('thankyou.html')
