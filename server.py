@@ -41,7 +41,9 @@ def data():
 def cheep():
     name = request.form['name']
     message = request.form['message']
-    print("got a cheep from [%s]: %s" % (name,message))
+    #print("got a cheep from [%s]: %s" % (name,message))
+    with open("cheeps.log",'a') as f:
+        f.write("%s: %s" %(name,message))
     # TODO: append [name: message] to a file of cheeps
     with open("cheeps.log",'a') as f:
         f.write("%s: %s" % (name,message))
