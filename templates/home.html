@@ -16,12 +16,8 @@
 .cheepbox{
   float:left;
   position:relative;
-  left:350px;
+  left:280px;
   bottom:50px;
-  width: 550px;
-  height: 50px;
-  border: 2px solid #0066FF;
-  border-radius: 25px;
   padding: 0px;
   margin: 10px;
 
@@ -34,16 +30,6 @@
 .outdoor{
   background:blue;
 }
-
-.cheepdetails{
-  background:#0066FF;
-  font-size: 30px;
-  color:black;
-  text-align:center;
-  font-weight:bold;
-  cursor:pointer;
-}
-
 </style>
 
 <!-- TODO: style with boostrap -->
@@ -218,10 +204,10 @@
 
 
 
-<form action = "/cheep" method = "post">
+<form action = "/cheep" method = "post" class ="cheepbox">
 <input type ="text" name = "name" placeholder= "Name Here"></input>
 <input type ="text" name = "message" placeholder= "Message Here"></input>
-<button type = "submit"> Cheep! </button>
+<button type = "submit" class="btn btn-primary"> Cheep! </button>
 
 </form>
 

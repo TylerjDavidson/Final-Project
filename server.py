@@ -51,6 +51,5 @@ def cheep():
 
     s.write("l")
     msg = "%s: %s" % (name,message)
-
     s.write(msg.encode('utf-8'))
     return render_template('thankyou.html')
