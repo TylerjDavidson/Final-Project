@@ -217,8 +217,10 @@
 </div>
 
 
-<form>
-<input class="cheepbox cheepdetails" type="button" value= "Send a Cheep!" onclick="window.location.href='localhost:5000/cheep'" />
+<form action = "/cheep" method = "post">
+<input type ="text" name = "name" placeholder= "Name Here"></input>
+<input type ="text" name = "message"></input>
+<button class="cheepbox cheepdetails" type = "submit"> Cheep! </button>
 </form>
 <!-- TODO: add form with a name and message field:
      on submit POST the data to /cheep -->
